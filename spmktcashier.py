@@ -1,6 +1,6 @@
 IValue,ProductList,ClientDiscountPoints,CPF,CPFI,ClientPoints = [],[],[],[],[],[]
 def validate_cpf(cpf):
-    if len(cpf) < 11:
+    if len(cpf) != 11:
         return False    
     if cpf in [s * 11 for s in [str(n) for n in range(10)]]:
         return False
