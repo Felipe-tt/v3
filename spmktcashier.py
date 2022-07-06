@@ -1,4 +1,4 @@
-IValue,ProductList,ClientDiscountPoints,CPF,CPFI = [],[],[],[],[]
+IValue,ProductList,ClientDiscountPoints,CPF,CPFI,ClientPoints = [],[],[],[],[],[]
 def validate_cpf(cpf):
     if len(cpf) < 11:
         return False    
@@ -14,24 +14,21 @@ while True:
     elif validate_cpf(cpfRecebido) == True: CPF.append(cpfRecebido), CPFI.append(cpfRecebido); print('CPF Cadastrado!')
     else: print('CPF Inválido!')
     Sign = int(input('Deseja cadastrar outro CPF? Sim[1] Não[2]\n'))
-    if Sign == 2: break
+    if Sign == 2: ClientDiscountPoints = CPFI; break
 while True:
     while True:
         ClientCPF = input('Para realizar a compra, digite seu CPF: ')
         if validate_cpf(ClientCPF) == True: break
         else: print('CPF Inválido!')
-    CliCPF = ClientCPF
-    ClientDiscountPoints = CPFI
     isSigned = ClientCPF in CPF
-    if isSigned: ClientI = CPF.index(CliCPF)
+    if isSigned: ClientI = CPF.index(ClientCPF)
     while True:
         ProductList.append(input('Insira o nome do produto a ser comprado:\n'))
         ProductValue = float(input('Insira o valor do produto:\nR$')); IValue.append(ProductValue)
         Choose = int(input("Mais produtos a comprar? Sim[1] Não[2]\n"))
         if Choose == 2: 
             ValueSum = sum(IValue)
-            if isSigned: 
-                ClientDiscountPoints[ClientI] = ValueSum / 5
+            if isSigned: ClientDiscountPoints[ClientI] =+ ValueSum / 5
             break
     if isSigned: 
         Choose = int(input('Deseja utilizar todos os seus pontos? Sim[1] Não [2]\n'))
