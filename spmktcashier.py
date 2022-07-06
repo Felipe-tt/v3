@@ -1,3 +1,4 @@
+from curses.ascii import isdigit
 IValue,ProductList,ClientDiscountPoints,CPF,CPFI,ClientPoints = [],[],[],[],[],[]
 def validate_cpf(cpf):
     if len(cpf) != 11:
@@ -28,7 +29,11 @@ while True:
         Choose = int(input("Mais produtos a comprar? Sim[1] Não[2]\n"))
         if Choose == 2: 
             ValueSum = sum(IValue)
-            if isSigned: ClientDiscountPoints[ClientI] =+ ValueSum / 5
+            if isSigned: 
+                for i in range(len(CPF)):
+                    if CPF[i] == ClientCPF: 
+                        if isdigit(ClientDiscountPoints[i]): ClientDiscountPoints[i] = ValueSum/5
+                        else: ClientDiscountPoints[i] + ValueSum/5
             break
     if isSigned: 
         Choose = int(input('Deseja utilizar todos os seus pontos? Sim[1] Não [2]\n'))
