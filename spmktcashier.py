@@ -1,5 +1,3 @@
-from cmath import isnan
-import string
 IValue,ProductList,ClientDiscountPoints,CPF,CPFI,ClientPoints = [],[],[],[],[],[]
 def validate_cpf(cpf):
     if len(cpf) != 11:
@@ -34,12 +32,13 @@ while True:
                 for i in range(len(CPF)):
                     if CPF[i] == ClientCPF: 
                         if type(ClientDiscountPoints[i]) != float: ClientDiscountPoints[i] = ValueSum/5
-                        else: ClientDiscountPoints[i] = ClientDiscountPoints[i] + ValueSum/5
+                        else: ClientDiscountPoints[i] + ValueSum/5
+                        ClientI = i
             break
     if isSigned: 
         Choose = int(input('Deseja utilizar todos os seus pontos? Sim[1] Não [2]\n'))
         if Choose == 1: ValueSum -= (ClientDiscountPoints[ClientI] * 0.25); ClientDiscountPoints[ClientI] = 0
-        print(f'CPF do cliente: {ClientCPF}\nQuantidade de pontos: {ClientDiscountPoints[ClientI]}\nTotal a pagar: {ValueSum}')
+        print(f'CPF do cliente: {ClientCPF}\nQuantidade de pontos: {round(ClientDiscountPoints[ClientI])}\nTotal a pagar: {ValueSum}')
     else: print(f'Lista de compras: {ProductList}\nTotal a pagar: {ValueSum}')
     ValueSum = 0; IValue.clear(); ProductList.clear()
     Choose = int(input("Deseja fazer uma nova compra? Sim[1] Não[2]\n"))
