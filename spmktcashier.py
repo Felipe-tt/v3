@@ -1,4 +1,5 @@
-from curses.ascii import isdigit
+from cmath import isnan
+import string
 IValue,ProductList,ClientDiscountPoints,CPF,CPFI,ClientPoints = [],[],[],[],[],[]
 def validate_cpf(cpf):
     if len(cpf) != 11:
@@ -32,8 +33,8 @@ while True:
             if isSigned: 
                 for i in range(len(CPF)):
                     if CPF[i] == ClientCPF: 
-                        if isdigit(ClientDiscountPoints[i]): ClientDiscountPoints[i] = ValueSum/5
-                        else: ClientDiscountPoints[i] + ValueSum/5
+                        if type(ClientDiscountPoints[i]) != float: ClientDiscountPoints[i] = ValueSum/5
+                        else: ClientDiscountPoints[i] = ClientDiscountPoints[i] + ValueSum/5
             break
     if isSigned: 
         Choose = int(input('Deseja utilizar todos os seus pontos? Sim[1] Não [2]\n'))
