@@ -1,5 +1,5 @@
 from math import floor
-IValue,ProductList,ClientDiscountPoints,CPF,CPFI,ClientPoints = [],[],[],[],[],[]
+IValue,ProductList,ClientDiscountPoints,CPF,CPFI = [],[],[],[],[]
 def validate_cpf(cpf):
     if len(cpf) != 11:
         return False    
