@@ -39,7 +39,7 @@ while True:
         Choose = int(input('Deseja utilizar todos os seus pontos? Sim[1] Não [2]\n'))
         if Choose == 1: ValueSum -= (ClientDiscountPoints[ClientI] * 0.25); ClientDiscountPoints[ClientI] = 0
         print(f'CPF do cliente: {ClientCPF}\nQuantidade de pontos: {floor(ClientDiscountPoints[ClientI])}\nTotal a pagar: {ValueSum}')
-    else: print(f'Lista de compras: {",".join(ProductList)}\nTotal a pagar: {ValueSum}')
+    else: print(f'Lista de compras: {",".join(ProductList)}\nTotal a pagar: R${ValueSum}')
     ValueSum = 0; IValue.clear(); ProductList.clear()
     Choose = int(input("Deseja fazer uma nova compra? Sim[1] Não[2]\n"))
     if Choose == 2: break
