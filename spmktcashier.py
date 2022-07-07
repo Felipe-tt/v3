@@ -25,7 +25,7 @@ while True:
     if isSigned: ClientI = CPF.index(ClientCPF)
     while True:
         ProductList.append(input('Insira o nome do produto a ser comprado:\n'))
-        ProductValue = float(input('Insira o valor do produto:\nR$')); IValue.append(ProductValue)
+        IValue.append(float(input('Insira o valor do produto:\nR$')))
         Choose = int(input("Mais produtos a comprar? Sim[1] Não[2]\n")) 
         if Choose == 2: 
             ValueSum = sum(IValue)
