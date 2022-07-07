@@ -1,3 +1,4 @@
+#https://www.canva.com/design/DAFFwJIMNrI/TLdXR63IaSikqrRfSpx8lA/edit?utm_content=DAFFwJIMNrI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 from math import floor
 IValue,ProductList,ClientDiscountPoints,CPF,CPFI = [],[],[],[],[]
 def validate_cpf(cpf):
