@@ -33,7 +33,7 @@ while True:
                 for i in range(len(CPF)):
                     if CPF[i] == ClientCPF: 
                         if type(ClientDiscountPoints[i]) != float: ClientDiscountPoints[i] = ValueSum/5
-                        else: ClientDiscountPoints[i] + ValueSum/5
+                        else: ClientDiscountPoints[i] = ClientDiscountPoints[i] + ValueSum/5
             break
     if isSigned: 
         Choose = int(input('Deseja utilizar todos os seus pontos? Sim[1] Não [2]\n'))
